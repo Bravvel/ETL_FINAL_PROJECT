@@ -35,7 +35,7 @@ def load_to_postgres(**kwargs):
     data = ti.xcom_pull(task_ids="extract")
 
     if not data:
-        raise ValueError("❌ Ошибка: XCom вернул None")
+        raise ValueError("Ошибка: XCom вернул None")
 
     conn = psycopg2.connect(**POSTGRES_CONN)
     cursor = conn.cursor()
